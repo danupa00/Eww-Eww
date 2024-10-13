@@ -6,6 +6,108 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 let cap = '*Qᴜᴇᴇɴ-ᴋᴇɴᴢɪ ᴍᴅ ᴠ2 ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ • ᴅᴀɴᴜxᴢᴢ*'
 //=====================================================================================
 cmd({
+        pattern: "new",
+        react: "📫",
+        alias: ["status"],
+        desc: "Check bot new commands.",
+        category: "other",
+        use: '.new',
+        filename: __filename
+    },
+    async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants,  isItzcp, groupAdmins, isBotAdmins, isAdmins, reply,react}) => {
+    try{
+        
+    
+    const rtime = await runtime(process.uptime())
+    
+    const txt =`*___ {  𝐍𝐄𝐖 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 🔮 }*
+__________________________________________________
+||
+> | • .𝙶𝙿𝙰𝚂𝚂 >> 🔒
+
+> | • .𝚂𝚁𝙴𝙿𝙾1 >> 🛸
+
+> | • .𝚆𝙴𝙰𝚃𝙷𝙴𝚁 >> 💠
+
+> | • .𝙶𝙸𝚃𝙷𝙷𝚄𝙱𝚂𝚃𝙰𝙻𝙺 >> 🌐
+
+> | • .𝙰𝙱𝙾𝚄𝚃1 >> 🔗
+
+> | • .𝙽𝙴𝚆𝚂1 >> 🗞️
+
+> | • .𝚃𝚁𝚃 >> 🔃
+
+> | • .𝙵𝙰𝙲𝚃 >> 🤣
+
+> | • .𝙳𝙾𝙶 >> 😂
+
+> | • .𝚁𝚅𝙸𝙳𝙴𝙾 >> 🎬
+
+> | • .𝚀𝚄𝙾𝚃𝙾 >> 💾
+
+> | • .𝙰𝙽𝙸𝙼𝙴𝙶𝙸𝚁𝙻 >> 📀
+
+> | • .𝙼𝙾𝚅𝙸𝙴 >> 💿️
+
+> | • .𝚂𝙷𝚄𝚃𝙳𝙾𝚆𝙽1 >> 🧮
+
+> | • .𝙱𝚁𝙾𝙰𝙳𝙲𝙰𝚂𝚃1 >> 📼
+
+> | • .𝚂𝙴𝚃𝙿𝙿1 >>💡
+
+> | • .𝙲𝙻𝙴𝙰𝚁𝙲𝙷𝙰𝚃𝚂1 >> 📲
+
+> | • .𝙹𝙸𝙳1 >> 📹
+
+> | • .𝙶𝙹𝙸𝙳1 >> 📹
+
+> | • .𝙲𝙾𝙽𝚅𝙴𝚁𝚃1 >> 💽
+
+> | • .𝙷𝙰𝙲𝙺 >>📏
+
+> | • .𝙹𝙾𝙺𝙴 >> 🤣
+
+*SPECIAL ANIME MENU* 🥶💗
+> animes [Type This] 🩵
+_____________________________________________
+*|___*`
+    
+    let buttons = [
+      {
+          name: "quick_reply",
+          buttonParamsJson: JSON.stringify({
+              display_text: "💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍",
+              id: ".alive"
+          }),
+      },
+
+    
+    ]
+    
+    let message = {
+        image: config.LOGO,
+      header: '',
+      footer: config.FOOTER,
+      
+    
+    
+      body: txt
+    
+    }
+    
+    
+    
+    
+    
+    
+    return await conn.sendButtonMessage(from, buttons, m, message)
+    } catch (e) {
+        reply('*Error !!*')
+        console.log(e)
+    }
+    })
+    
+cmd({
         pattern: "alive",
         react: "👻",
         alias: ["online", "test", "bot"],
@@ -422,6 +524,13 @@ _____________________________________
           buttonParamsJson: JSON.stringify({
               display_text: "𝐑𝐔𝐋𝐄𝐒 🗿",
               id: ".rules"
+          }),
+            },
+            {
+          name: "quick_reply",
+          buttonParamsJson: JSON.stringify({
+              display_text: "𝐍𝐄𝐖 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 🔩️",
+              id: ".new"
           }),
             },
             {
